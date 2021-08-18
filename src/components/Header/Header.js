@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import Navbar from "./NavBar";
 
 const HeaderContainer = styled.div`
