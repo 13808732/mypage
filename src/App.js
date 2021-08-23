@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   background-color: rgb(150, 150, 150);
   width: 100vw;
   height: 100vh;
-  margin-top: 0;
+  padding: 5px;
 `;
 
 function App() {
