@@ -4,7 +4,8 @@ import { Switch, Route } from "react-router-dom";
 import { GlobalStyle, ResetStyle } from "./globalStyle";
 import Header from "./components/Header";
 import HomePage from "./Pages/HomePage";
-import Weather from "./Pages/Weather";
+import WeatherPage from "./Pages/Weather";
+import About from "./Pages/About";
 
 const Wrapper = styled.div`
   background-color: rgb(150, 150, 150);
@@ -21,9 +22,10 @@ function App() {
         <GlobalStyle />
         <Header />
         <Switch>
-          <Route path="/" exact component={HomePage} />
+          <Route exact path="/" component={HomePage} />
           <Route path="/Home" exact component={HomePage} />
-          <Route path="/Weather"  componnet={Weather} />
+          <Route path="/Weather" component={WeatherPage} />
+          <Route path="/About" exact component={About} />
         </Switch>
       </Wrapper>
     </div>
