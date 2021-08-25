@@ -6,6 +6,7 @@ import Navbar from "./NavBar";
 const HeaderContainer = styled.div`
   width: 80%;
   height: 30px;
+  max-width: 945px;
   margin: 10px auto;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 1);

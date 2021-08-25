@@ -15,6 +15,7 @@ const HomePageWrapper = styled.div`
   width: 80vw;
   height: 80vh;
   max-height: 450px;
+  max-width: 945px;
   margin: 20px auto;
   background-image: url(${bg});
   background-repeat: no-repeat;
