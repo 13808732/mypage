@@ -30,6 +30,8 @@ const TopRight = styled.div`
 `;
 const Bottom = styled.div`
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 30px auto 0px;
   width: 95%;
   height: 40%;
@@ -40,10 +42,16 @@ const Bottom = styled.div`
 const WeatherPage = () => (
   <WeatherWrapper>
     <Top>
-      <WeatherCard />
+      <WeatherCard size="main" />
       <TopRight>Sydney</TopRight>
     </Top>
-    <Bottom></Bottom>
+    <Bottom>
+      <WeatherCard size="sub" />
+      <WeatherCard size="sub" />
+      <WeatherCard size="sub" />
+      <WeatherCard size="sub" />
+      <WeatherCard size="sub" />
+    </Bottom>
   </WeatherWrapper>
 );
 

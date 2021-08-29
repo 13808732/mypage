@@ -5,7 +5,8 @@ import { GlobalStyle, ResetStyle } from "./globalStyle";
 import Header from "./components/Header";
 import HomePage from "./Pages/HomePage";
 import WeatherPage from "./Pages/Weather";
-import About from "./Pages/About";
+import TimePage from "./Pages/TimePage";
+
 
 const Wrapper = styled.div`
   background-color: rgb(150, 150, 150);
@@ -25,7 +26,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/Home" exact component={HomePage} />
           <Route path="/Weather" component={WeatherPage} />
-          <Route path="/About" exact component={About} />
+          <Route path="/Time" exact component={TimePage} />
         </Switch>
       </Wrapper>
     </div>
