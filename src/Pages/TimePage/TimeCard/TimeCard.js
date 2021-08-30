@@ -13,7 +13,7 @@ const ReusableSize = styled.div`
   font-size: 1rem;
   height: 2rem;
   line-height: 2rem;
-  width: 12rem;
+  width: 80%;
 `;
 
 const Position = styled(ReusableSize)`
@@ -45,7 +45,31 @@ const Square = styled(ReusableSize)`
 `;
 
 const TimeCard = (props) => {
-  const { position, day, month, date, year, hour, minute, second } = props;
+  const { position, d } = props;
+  console.log(d);
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const day = days[d.getDay()];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = months[d.getMonth()];
+  const date = d.getDate();
+  const year = d.getFullYear();
+  const hour = d.getHours();
+  const minute = d.getMinutes();
+  const second = d.getSeconds();
+
   return (
     <CardContainer>
       <Position>{position || "Sydney"}</Position>

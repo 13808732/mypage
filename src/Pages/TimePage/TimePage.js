@@ -22,78 +22,25 @@ const TimeWrapper = styled.div`
 `;
 
 const TimePage = () => {
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const day = days[new Date().getDay()];
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const month = months[new Date().getMonth()];
-  const date = new Date().getDate();
-  const year = new Date().getFullYear();
-  const hour = new Date().getHours();
-  const minute = new Date().getMinutes();
   //=============这里开始利用hooks============
-  const [second, setSecond] = useState();
+  const [timeStamp, setTimeStamp] = useState();
+  const sydney = new Date(timeStamp);
+  const beijing = new Date(timeStamp-7200000)
+  const bankok = new Date(timeStamp-10800000)
+  const newyork = new Date(timeStamp-50400000)
   const cb = () => {
     setInterval(() => {
-      setSecond(new Date().getSeconds(), 500);
+      setTimeStamp(new Date().getTime(), 500);
     });
   };
-  useEffect(cb, [second]);
+  useEffect(cb, []);
   //========================================
   return (
     <TimeWrapper>
-      <TimeCard
-        position="Sydney"
-        day={day}
-        month={month}
-        date={date}
-        year={year}
-        hour={hour}
-        minute={minute}
-        second={second}
-      />
-      <TimeCard
-        position="Beijing"
-        day={day}
-        month={month}
-        date={date}
-        year={year}
-        hour={hour - 2}
-        minute={minute}
-        second={second}
-      />
-      <TimeCard
-        position="Bankok"
-        day={day}
-        month={month}
-        date={date}
-        year={year}
-        hour={hour - 3}
-        minute={minute}
-        second={second}
-      />
-      <TimeCard
-        position="NewYork"
-        day={day}
-        month={month}
-        date={date}
-        year={year}
-        hour={hour - 14}
-        minute={minute}
-        second={second}
-      />
+      <TimeCard position="Sydney" d={sydney} />
+      <TimeCard position="Beijing" d={beijing} />
+      <TimeCard position="Bankok" d={bankok} />
+      <TimeCard position="NewYork" d={newyork} />
     </TimeWrapper>
   );
 };

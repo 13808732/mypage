@@ -39,7 +39,22 @@ const Bottom = styled.div`
   border: white 1px solid;
   border-radius: 10px;
 `;
-const WeatherPage = () => (
+
+
+const WeatherPage = () => {
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition((pos) => {
+  //     let lat = pos.coords.latitude;
+  //     let lng = pos.coords.longitude;
+  //     console.log(lat, lng);
+  //     const timeStamp = new Date().getTime();
+  //     const api = axios.create({
+  //       baseURL: `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}lon=${lng}&dt=${timeStamp}&appid=7a5511e38f3f7cde296243ec83e7af91`,
+  //     });
+
+  //   });
+  // }
+  return(
   <WeatherWrapper>
     <Top>
       <WeatherCard size="main" />
@@ -53,6 +68,6 @@ const WeatherPage = () => (
       <WeatherCard size="sub" />
     </Bottom>
   </WeatherWrapper>
-);
+)};
 
 export default WeatherPage;
