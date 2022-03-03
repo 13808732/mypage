@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import sydneybg from "../../assets/images/sydney_bg.jpeg";
 import WeatherCard from "./WeatherCard";
@@ -23,51 +23,45 @@ const Top = styled.div`
   justify-content: space-around;
 `;
 
-const TopRight = styled.div`
+const TopLeft = styled.div`
   font-size: 6rem;
   color: white;
   text-shadow: 5px 5px 5px black;
 `;
+
+const TopRight = styled.div``;
 const Bottom = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 30px auto 0px;
+  margin: 5% auto;
   width: 95%;
-  height: 40%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: white 1px solid;
-  border-radius: 10px;
+  min-height: 285px;
 `;
 
-
 const WeatherPage = () => {
-  // if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition((pos) => {
-  //     let lat = pos.coords.latitude;
-  //     let lng = pos.coords.longitude;
-  //     console.log(lat, lng);
-  //     const timeStamp = new Date().getTime();
-  //     const api = axios.create({
-  //       baseURL: `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}lon=${lng}&dt=${timeStamp}&appid=7a5511e38f3f7cde296243ec83e7af91`,
-  //     });
+  const [city, setCity] = useState("Sydney");
+  const formatCityName = (event) => {
+    event.preventDefault();
+    const cityName = event.target.elements.cityName.value;
+    setCity(cityName.replace(cityName[0], cityName[0].toUpperCase()));
+  };
 
-  //   });
-  // }
-  return(
-  <WeatherWrapper>
-    <Top>
-      <WeatherCard size="main" />
-      <TopRight>Sydney</TopRight>
-    </Top>
-    <Bottom>
-      <WeatherCard size="sub" />
-      <WeatherCard size="sub" />
-      <WeatherCard size="sub" />
-      <WeatherCard size="sub" />
-      <WeatherCard size="sub" />
-    </Bottom>
-  </WeatherWrapper>
-)};
+  return (
+    <WeatherWrapper>
+      <Top>
+        <TopLeft>{city}</TopLeft>
+        <TopRight>
+          <form onSubmit={formatCityName}>
+            <input type="text" id="cityName" />
+            <button type="submit" value="search">
+              Search
+            </button>
+          </form>
+        </TopRight>
+      </Top>
+      <Bottom>
+        <WeatherCard city={city} />
+      </Bottom>
+    </WeatherWrapper>
+  );
+};
 
 export default WeatherPage;

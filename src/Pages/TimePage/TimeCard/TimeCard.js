@@ -14,6 +14,7 @@ const ReusableSize = styled.div`
   height: 2rem;
   line-height: 2rem;
   width: 80%;
+  box-shadow: 5px 5px 5px black;
 `;
 
 const Position = styled(ReusableSize)`
@@ -42,6 +43,7 @@ const Square = styled(ReusableSize)`
   background-color: rgb(255, 115, 24);
   width: 2rem;
   border: 1px solid white;
+  box-shadow: none;
 `;
 
 const TimeCard = (props) => {
@@ -72,16 +74,16 @@ const TimeCard = (props) => {
 
   return (
     <CardContainer>
-      <Position>{position || "Sydney"}</Position>
+      <Position>{position}</Position>
       <DateWrapper>
-        {day} {month} {date || "today"} {year}
+        {day} {month} {date} {year}
       </DateWrapper>
       <TimeWrapper>
-        <Square>{hour || "00"}</Square>
+        <Square>{hour}</Square>
         <span>:</span>
-        <Square>{minute || "00"}</Square>
+        <Square>{minute}</Square>
         <span>:</span>
-        <Square>{second || "00"}</Square>
+        <Square>{second}</Square>
       </TimeWrapper>
     </CardContainer>
   );
