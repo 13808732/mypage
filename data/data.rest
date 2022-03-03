@@ -1,0 +1,9 @@
+POST http://localhost:3090/user
+Content-Type: application/json 
+
+{
+  "name":"Hao Tang",
+  "age":20,
+  "income":0
+}
+#######################
