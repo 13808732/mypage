@@ -1,107 +1,77 @@
-import React from "react";
+/* eslint-disable array-callback-return */
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
+import Axios from "axios";
 
 const Wrapper = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 20px;
-  border: white 2px solid;
-  box-shadow: 5px 5px 5px black;
-  margin-top: 15px;
-  margin-bottom: 5px;
-
-  ${(props) =>
-    ({
-      main: css`
-        width: 200px;
-        height: 200ps;
-      `,
-      sub: css`
-        width: 100px;
-        height: 100px;
-      `,
-    }[props.size])}
-`;
-const Top = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const Temperature = styled.div`
-  ${(props) =>
-    ({
-      main: css`
-        font-size: 7rem;
-      `,
-      sub: css`
-        font-size: 2rem;
-      `,
-    }[props.size])}
-`;
-const Climate = styled.div`
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  ${(props) =>
-    ({
-      main: css`
-        font-size: 1rem;
-      `,
-      sub: css`
-        font-size: 0.5rem;
-      `,
-    }[props.size])}
-`;
-const Bottom = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
-  font-weight: 400;
-  ${(props) =>
-    ({
-      main: css`
-        display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-        font-weight: 400;
-      `,
-      sub: css`
-        display: none;
-      `,
-    }[props.size])}
-`;
-const Humidity = styled.div`
-  width: 30%;
-  span {
-    display: block;
-    margin-bottom: 5px;
-  }
-`;
-const Wind = styled.div`
-  width: 30% auto;
-  span {
-    display: block;
-    margin-bottom: 5px;
-  }
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: white 1px solid;
+  border-radius: 10px;
 `;
 
+const Temperature = styled.div``;
+const Climate = styled.div``;
+const Bottom = styled.div``;
+const Humidity = styled.div``;
+const Wind = styled.div``;
+
+const API_key = "7a5511e38f3f7cde296243ec83e7af91";
+
 const WeatherCard = (props) => {
+  const city = props.city ? props.city : "Sydney";
+  const [weatherData, setWeatherData] = useState({});
+  const api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=metric&country=AU`;
+  const {
+    time,
+    temp,
+    temp_max,
+    temp_min,
+    humidity,
+    description,
+    windSpeed,
+    sunrise,
+    sunset,
+    iconURL,
+  } = weatherData;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const { data } = await Axios.get(api);
+    setWeatherData(formatWeatherData(data));
+  }, [city]);
+
+  const formatWeatherData = (apiResponse) => {
+    const { temp, temp_max, temp_min, humidity } = apiResponse.main;
+    const { description, icon } = apiResponse.weather[0];
+    const iconURL = `openweathermap.org/img/wn/${icon}@2x.png`;
+    const windSpeed = apiResponse.wind.speed;
+    const { sunrise, sunset } = apiResponse.sys;
+    const time = new Date(apiResponse.coord.dt).toLocaleTimeString();
+
+    return {
+      time,
+      temp,
+      temp_max,
+      temp_min,
+      humidity,
+      description,
+      windSpeed,
+      sunrise,
+      sunset,
+      iconURL,
+    };
+  };
   return (
-    <Wrapper size={props.size}>
-      <Top>
-        <Temperature size={props.size}>12˚</Temperature>
-        <Climate size={props.size}>CLOUDY</Climate>
-      </Top>
-      <Bottom size={props.size}>
-        <Humidity>
-          <span>HUMIDITY</span>
-          <span>64%</span>
-        </Humidity>
-        <span style={{ fontSize: "2rem" }}>|</span>
-        <Wind>
-          <span>WIND</span>
-          <span>12 K/M</span>
-        </Wind>
-      </Bottom>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Temperature>{temp}&#8451;</Temperature>
+      </Wrapper>
+    </>
   );
 };
 

@@ -24,10 +24,6 @@ const TimeWrapper = styled.div`
 const TimePage = () => {
   //=============这里开始利用hooks============
   const [timeStamp, setTimeStamp] = useState();
-  const sydney = new Date(timeStamp);
-  const beijing = new Date(timeStamp-7200000)
-  const bankok = new Date(timeStamp-10800000)
-  const newyork = new Date(timeStamp-50400000)
   const cb = () => {
     setInterval(() => {
       setTimeStamp(new Date().getTime(), 500);
@@ -35,6 +31,10 @@ const TimePage = () => {
   };
   useEffect(cb, []);
   //========================================
+  const sydney = new Date(timeStamp);
+  const beijing = new Date(timeStamp-7200000)
+  const bankok = new Date(timeStamp-10800000)
+  const newyork = new Date(timeStamp-50400000)
   return (
     <TimeWrapper>
       <TimeCard position="Sydney" d={sydney} />

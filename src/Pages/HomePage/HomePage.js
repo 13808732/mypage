@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaInstagramSquare,
   FaTwitterSquare,
+  FaCreditCard,
 } from "react-icons/fa";
 
 const HomePageWrapper = styled.div`
@@ -115,22 +116,24 @@ const Face = styled.img`
 `;
 
 const HomePage = () => (
-  <HomePageWrapper>
-    <Left>
-      <Title>Hao Tang</Title>
-      <Title2>Full Stack Developer</Title2>
-      <ContectIcons>
-        <FaFacebookSquare size={30} />
-        <FaLinkedin size={30} />
-        <FaInstagramSquare size={30} />
-        <FaTwitterSquare size={30} />
-      </ContectIcons>
-    </Left>
-    <Right>
-      <Yellowbg src={yellowbg} />
-      <Face src={face} />
-    </Right>
-  </HomePageWrapper>
+  <>
+    <HomePageWrapper>
+      <Left>
+        <Title>Hao Tang</Title>
+        <Title2>Front End Developer</Title2>
+        <ContectIcons>
+          <FaFacebookSquare size={30} />
+          <FaLinkedin size={30} />
+          <FaInstagramSquare size={30} />
+          <FaTwitterSquare size={30} />
+        </ContectIcons>
+      </Left>
+      <Right>
+        <Yellowbg src={yellowbg} />
+        <Face src={face} />
+      </Right>
+    </HomePageWrapper>
+  </>
 );
 
 export default HomePage;

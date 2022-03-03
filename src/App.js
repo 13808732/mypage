@@ -7,7 +7,6 @@ import HomePage from "./Pages/HomePage";
 import WeatherPage from "./Pages/Weather";
 import TimePage from "./Pages/TimePage";
 
-
 const Wrapper = styled.div`
   background-color: rgb(150, 150, 150);
   width: 100vw;
@@ -25,7 +24,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/Home" exact component={HomePage} />
-          <Route path="/Weather" component={WeatherPage} />
+          {/* <Route path="/Weather" component={WeatherPage} /> */}
           <Route path="/Time" exact component={TimePage} />
         </Switch>
       </Wrapper>
