@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/haotang.github.io/static/js/main.17a2170f.chunk.js",
-    "main.js.map": "/haotang.github.io/static/js/main.17a2170f.chunk.js.map",
-    "runtime-main.js": "/haotang.github.io/static/js/runtime-main.52279487.js",
-    "runtime-main.js.map": "/haotang.github.io/static/js/runtime-main.52279487.js.map",
-    "static/js/2.6bfa8baf.chunk.js": "/haotang.github.io/static/js/2.6bfa8baf.chunk.js",
-    "static/js/2.6bfa8baf.chunk.js.map": "/haotang.github.io/static/js/2.6bfa8baf.chunk.js.map",
-    "static/js/3.62765039.chunk.js": "/haotang.github.io/static/js/3.62765039.chunk.js",
-    "static/js/3.62765039.chunk.js.map": "/haotang.github.io/static/js/3.62765039.chunk.js.map",
-    "index.html": "/haotang.github.io/index.html",
-    "static/js/2.6bfa8baf.chunk.js.LICENSE.txt": "/haotang.github.io/static/js/2.6bfa8baf.chunk.js.LICENSE.txt",
-    "static/media/Face.d26ba3a9.png": "/haotang.github.io/static/media/Face.d26ba3a9.png",
-    "static/media/homePageBG.26e03537.png": "/haotang.github.io/static/media/homePageBG.26e03537.png",
-    "static/media/sydney_bg.eb2715c4.jpeg": "/haotang.github.io/static/media/sydney_bg.eb2715c4.jpeg",
-    "static/media/weatherBG.47608c4c.png": "/haotang.github.io/static/media/weatherBG.47608c4c.png"
+    "main.js": "/mypage/static/js/main.17a2170f.chunk.js",
+    "main.js.map": "/mypage/static/js/main.17a2170f.chunk.js.map",
+    "runtime-main.js": "/mypage/static/js/runtime-main.66924489.js",
+    "runtime-main.js.map": "/mypage/static/js/runtime-main.66924489.js.map",
+    "static/js/2.7e83ed41.chunk.js": "/mypage/static/js/2.7e83ed41.chunk.js",
+    "static/js/2.7e83ed41.chunk.js.map": "/mypage/static/js/2.7e83ed41.chunk.js.map",
+    "static/js/3.62765039.chunk.js": "/mypage/static/js/3.62765039.chunk.js",
+    "static/js/3.62765039.chunk.js.map": "/mypage/static/js/3.62765039.chunk.js.map",
+    "index.html": "/mypage/index.html",
+    "static/js/2.7e83ed41.chunk.js.LICENSE.txt": "/mypage/static/js/2.7e83ed41.chunk.js.LICENSE.txt",
+    "static/media/Face.d26ba3a9.png": "/mypage/static/media/Face.d26ba3a9.png",
+    "static/media/homePageBG.26e03537.png": "/mypage/static/media/homePageBG.26e03537.png",
+    "static/media/sydney_bg.eb2715c4.jpeg": "/mypage/static/media/sydney_bg.eb2715c4.jpeg",
+    "static/media/weatherBG.47608c4c.png": "/mypage/static/media/weatherBG.47608c4c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.52279487.js",
-    "static/js/2.6bfa8baf.chunk.js",
+    "static/js/runtime-main.66924489.js",
+    "static/js/2.7e83ed41.chunk.js",
     "static/js/main.17a2170f.chunk.js"
   ]
 }
