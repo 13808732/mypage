@@ -24,7 +24,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/Home" exact component={HomePage} />
-          {/* <Route path="/Weather" component={WeatherPage} /> */}
           <Route path="/Time" exact component={TimePage} />
         </Switch>
       </Wrapper>
